@@ -1,2 +1,2 @@
 # lbd-angular
- Final
+ Final version
