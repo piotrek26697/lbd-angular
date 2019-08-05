@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Expense } from './expense';
+import { ExpenseService } from 'src/app/services/expense.service';
 
 @Component({
   selector: 'app-expense',
@@ -8,14 +9,18 @@ import { Expense } from './expense';
 })
 export class ExpenseComponent implements OnInit {
   expenses: Array<Expense>;
+  selectedExpense: Expense;
+  expenseService: ExpenseService;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.expenses = new Array();
-    this.expenses.push(new Expense(1, "354"));
-    this.expenses.push(new Expense(2, "6326"));
-    this.expenses.push(new Expense(3, "614"));
+  constructor(expenseService: ExpenseService) {
+    this.expenseService = expenseService;
   }
 
+  ngOnInit() {
+    this.expenses = this.expenseService.generateExpenseList();
+  }
+
+  selectExpense(expense: Expense) {
+    this.selectedExpense = expense;
+  }
 }

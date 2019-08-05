@@ -1,6 +1,23 @@
 export class Expense {
     private id: number;
     private name: string;
+    private value: number;
+
+    /**
+     * Getter $value
+     * @return {number}
+     */
+	public get $value(): number {
+		return this.value;
+	}
+
+    /**
+     * Setter $value
+     * @param {number} value
+     */
+	public set $value(value: number) {
+		this.value = value;
+	}
 
 
     /**
@@ -35,9 +52,10 @@ export class Expense {
         this.name = value;
     }
 
-    constructor($id: number, $name: string) {
+    constructor($id: number, $name: string, $value: number) {
         this.id = $id;
         this.name = $name;
+        this.value = $value;
     }
 
 }

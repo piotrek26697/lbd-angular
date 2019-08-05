@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ExpenseTrackingRoutingModule } from './expense-tracking-routing.module';
 import { ExpenseComponent } from './expense/expense.component';
@@ -9,7 +10,8 @@ import { ExpenseComponent } from './expense/expense.component';
   declarations: [ExpenseComponent],
   imports: [
     CommonModule,
-    ExpenseTrackingRoutingModule
+    ExpenseTrackingRoutingModule,
+    FormsModule
   ],
   exports: [
     ExpenseComponent

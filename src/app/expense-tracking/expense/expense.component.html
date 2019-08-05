@@ -1,15 +1,19 @@
 <p>expense works!</p>
 
-<h2>My Expenses</h2>
 <div class="container">
+    <h2>My Expenses</h2>
     <div class="row" *ngFor="let expense of expenses">
         <div class="col-md-3">
             <ul class="list-group">
-                <a href="#">
-                    {{expense.id}}.
-                    {{expense.name}} PLN
+                <a href="#" (click)="selectExpense(expense)">
+                    {{expense.id}}. {{expense.name}} - {{expense.value}} PLN
                 </a>
             </ul>
         </div>
+    </div>
+    <div class="list-group" *ngIf="selectedExpense">
+        {{selectedExpense.id}}. {{selectedExpense.name}} - {{selectedExpense.value}} PLN <br>
+        <label for="changeNameInput">Change the expense name:</label>
+        <input type="text" id="changeNameInput" [(ngModel)]="selectedExpense.name" name="changeNameInput">
     </div>
 </div>
