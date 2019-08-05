@@ -1,0 +1,15 @@
+<p>expense works!</p>
+
+<h2>My Expenses</h2>
+<div class="container">
+    <div class="row" *ngFor="let expense of expenses">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <a href="#">
+                    {{expense.id}}.
+                    {{expense.name}} PLN
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>
