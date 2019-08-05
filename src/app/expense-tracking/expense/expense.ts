@@ -58,4 +58,7 @@ export class Expense {
         this.value = $value;
     }
 
+    toString(): string{
+        return this.id + this.name;
+    }
 }

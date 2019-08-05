@@ -12,7 +12,7 @@ import { ExpenseTrackingModule } from './expense-tracking/expense-tracking.modul
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ExpenseTrackingModule,
+    ExpenseTrackingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
