@@ -6,15 +6,14 @@
         <div class="col-md-3">
             <ul class="list-group">
                 <a href="#" (click)="selectExpense(expense)">
-                    {{expense.id}}. {{expense.name}} - {{expense.value}} PLN
-                    <!-- {{expense.toString()}} -->
+                    {{expense.toString()}}
                 </a>
             </ul>
         </div>
     </div>
     <div class="list-group" *ngIf="selectedExpense">
-        {{selectedExpense.id}}. {{selectedExpense.name}} - {{selectedExpense.value}} PLN <br>
+        {{selectedExpense.toString()}}<br>
         <label for="changeNameInput">Change the expense name:</label>
-        <input type="text" id="changeNameInput" [(ngModel)]="selectedExpense.name" name="changeNameInput">
+        <input type="text" id="changeNameInput" [(ngModel)]="selectedExpense.description" name="changeNameInput">
     </div>
 </div>
